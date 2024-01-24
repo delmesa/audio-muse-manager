@@ -1,0 +1,15 @@
+#App {
+  display: flex;
+  height: 100vh;
+}
+
+#main-menu {
+  background-color: #202020;
+  color: #FAFAFA;
+  flex: 1;
+}
+
+#mini-session {
+  background-color: #3da0ce;
+  width: calc(10% + 100px);
+}
