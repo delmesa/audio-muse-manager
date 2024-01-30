@@ -1,0 +1,13 @@
+.search-bar {
+  display: flex;
+}
+
+.search-bar input {
+  flex: 1;
+  background-color: inherit;
+  border: none;
+}
+
+.search-bar input:focus {
+  outline: none;
+}

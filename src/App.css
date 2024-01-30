@@ -1,11 +1,11 @@
 #App {
-  display: flex;
+	display: flex;
   height: 100vh;
+  background-color: #131313;
+	color: #FAFAFA;
 }
 
 #main-menu {
-  background-color: #202020;
-  color: #FAFAFA;
   flex: 1;
 }
 

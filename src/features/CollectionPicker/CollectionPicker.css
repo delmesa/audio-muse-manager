@@ -1,0 +1,42 @@
+.collection-picker {
+  display: flex;
+  flex-direction: row;
+}
+
+.collection-picker > 
+.collection-search {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.collection-picker > 
+.collection-search > 
+.search-bar {
+  width: 100%;
+}
+
+.collection-picker > 
+.collection-search > 
+.display {
+  flex: 1;
+}
+
+.collection-picker >
+.selected-collections {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-picker >
+.selected-collections >
+.display {
+  flex: 1;
+}
+
+/* .collection-picker >
+.selected-collections >
+button {
+  
+} */

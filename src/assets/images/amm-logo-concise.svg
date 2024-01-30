@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="71.922806mm"
+   height="26.45966mm"
+   viewBox="0 0 71.922806 26.459659"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="audiomusemanager2.svg"
+   inkscape:export-xdpi="694.32422"
+   inkscape:export-ydpi="694.32422"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="amm-logo2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.1807491"
+     inkscape:cx="120.83004"
+     inkscape:cy="31.640504"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid132"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-69.364902,-105.83334)">
+    <path
+       id="path15727"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.306786;stroke-linejoin:round"
+       d="m 133.35015,105.83334 -7.14375,9.67693 -7.14375,-9.67642 h -0.52372 l -0.0436,13.06595 0.56736,0.0201 7.14376,9.86761 7.14375,-9.86813 v 13.37076 h 7.9375 v -26.45678 z"
+       sodipodi:nodetypes="cccccccccccc"
+       inkscape:export-filename="amm-logo-concise.svg"
+       inkscape:export-xdpi="694.32422"
+       inkscape:export-ydpi="694.32422" />
+    <path
+       id="path7824"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.306786;stroke-linejoin:round"
+       d="m 111.12515,105.83399 -7.14375,9.67693 -7.143754,-9.67642 h -0.523721 l -0.04364,13.06595 0.567364,0.0201 7.143751,9.86761 7.14375,-9.86813 v 13.37076 h 7.9375 v -26.45678 z"
+       transform="translate(0,-6.4666548e-4)"
+       sodipodi:nodetypes="cccccccccccc" />
+    <path
+       id="path7607"
+       style="fill:#00dfff;fill-opacity:1;stroke-width:0.306786;stroke-linejoin:round"
+       d="m 88.9,105.83385 -19.535098,26.45915 2.756277,-8.1e-4 h 3.549654 3.549654 l 2.401404,-3.31711 H 88.9 v 3.31711 h 7.9375 v -26.45834 z m 0,13.08706 v 6.35 h -4.596619 z"
+       sodipodi:nodetypes="ccccccccccccccc" />
+  </g>
+</svg>
