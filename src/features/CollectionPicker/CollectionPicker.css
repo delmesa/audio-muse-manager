@@ -1,13 +1,14 @@
 .collection-picker {
   display: flex;
   flex-direction: row;
+	overflow: hidden;
 }
 
 .collection-picker > 
 .collection-search {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
 .collection-picker > 
@@ -33,6 +34,16 @@
 .selected-collections >
 .display {
   flex: 1;
+}
+
+.collection-picker >
+.collection-search >
+.no-results {
+	display: flex;
+	justify-content: center;
+	color: #00000060;
+	font-style: italic;
+	margin: 32px;
 }
 
 /* .collection-picker >

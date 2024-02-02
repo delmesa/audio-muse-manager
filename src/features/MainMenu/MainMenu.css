@@ -96,15 +96,20 @@
   display: flex;
   flex-direction: column;
   width: 70rem;
+	overflow: hidden;
 }
 
 .about-text {
   margin-top: 8vh;
-  background-color: #22b6bb20;
+  background-color: #ffffff0c;
+	/* background-color: #00bedb; */
+	padding: 18px;
+  border-style: none;
+  border-radius: 4px;
 }
 
 .about-text p {
-  margin: 18px;
+	margin: 0;
   color: #e0e0e0;
 }
 
@@ -117,7 +122,8 @@
   background-color: #ffffff08;
   border-style: none;
   border-radius: 4px;
-  padding: 18px
+  padding: 18px;
+	overflow: hidden;
 }
 
 #main-link-input {
@@ -152,13 +158,13 @@
 }
 
 #main-collection-picker .collection-search .search-bar {
-  border-bottom: 1px solid #00000020;
+  border-bottom: 2px solid #00000020;
   padding: 4px 6px;
   font-size: 16px;
 }
 
 #main-collection-picker .collection-search .display {
-  
+	color: #505050;
 }
 
 #main-collection-picker .selected-collections {
@@ -195,4 +201,8 @@
   border: 2px solid #00000030;
   border-radius: 3px;
   font-size: 18px;
+}
+
+.collection {
+	height: 3.2em;
 }

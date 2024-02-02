@@ -1,0 +1,20 @@
+.collection {
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+	padding: 8px 10px;
+	transition: 40ms background-color;
+}
+
+.collection:hover {
+	background-color: #00000010;
+}
+
+.collection:not(:last-child) {
+	border-bottom: 1px solid #00000018;
+}
+
+.collection .icon {
+	margin-right: 12px;
+}

@@ -1,7 +1,6 @@
+
 import './MainMenu.css';
 
-// import SearchBar from "@/features/SearchBar";
-// import CollectionDisplay from "@/features/CollectionDisplay";
 import ExternalLinkInput from "@/features/ExternalLinkInput";
 import CollectionPicker from "@/features/CollectionPicker";
 

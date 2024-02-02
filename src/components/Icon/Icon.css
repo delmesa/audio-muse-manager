@@ -1,0 +1,18 @@
+.icon {
+	display: flex;
+	background-color: #00000020;
+	border: none;
+	border-radius: 4px;
+	width: 32px;
+	height: 32px;
+	justify-content: center;
+}
+
+.icon img {
+	object-fit: contain;
+	width: calc(72%);
+}
+
+.icon img.default {
+	filter: opacity(40%);
+}

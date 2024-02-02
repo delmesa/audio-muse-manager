@@ -1,15 +1,21 @@
 #App {
-	display: flex;
-  height: 100vh;
+	height: 100vh;
+  height: 100dvh;
   background-color: #131313;
 	color: #FAFAFA;
 }
 
 #main-menu {
-  flex: 1;
+	height: 100%;
+  width: calc(90% - 100px);
 }
 
 #mini-session {
   background-color: #3da0ce;
   width: calc(10% + 100px);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: calc(10% + 100px);
 }
