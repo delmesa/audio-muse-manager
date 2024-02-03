@@ -126,6 +126,20 @@
 	overflow: hidden;
 }
 
+.collection-interface .main-level-button {
+	width: fit-content;
+  padding: 4px 8px;
+  background-color: #db104d;
+  color: #FAFAFA;
+  border: 2px solid #00000030;
+  border-radius: 3px;
+	transition: 60ms background-color;
+}
+
+.collection-interface .main-level-button:hover {
+	background-color: #c20e44;
+}
+
 #main-link-input {
   font-size: 16px;
 }
@@ -138,11 +152,6 @@
 
 #main-link-input button {
   margin-left: 6px;
-  padding: 4px 8px;
-  background-color: #db104d;
-  color: #FAFAFA;
-  border: 2px solid #00000030;
-  border-radius: 3px;
 }
 
 #main-collection-picker {
@@ -194,12 +203,6 @@
 }
 
 #main-collection-picker .selected-collections .shuffle-button {
-  width: fit-content;
-  padding: 4px 8px;
-  background-color: #db104d;
-  color: #FAFAFA;
-  border: 2px solid #00000030;
-  border-radius: 3px;
   font-size: 18px;
 }
 

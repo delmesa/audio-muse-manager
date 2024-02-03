@@ -5,7 +5,7 @@ const ExternalLinkInput = ({ id, onSubmit=(()=>{}), placeholder }) => {
     return (
         <form id={id} className="external-link-input" onSubmit={onSubmit}>
             <input type="text" required placeholder={placeholder} />
-            <button type="submit">Add</button>
+            <button className="main-level-button" type="submit">Add</button>
         </form>
     )
 }

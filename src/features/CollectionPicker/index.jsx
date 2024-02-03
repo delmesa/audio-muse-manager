@@ -20,6 +20,7 @@ const CollectionPicker = ({ id }) => {
 	
     const collections = generateCollections();
 	const filteredCollections = filterArray(collections, userFilter); // TODO: memoize?
+	const selectedCollections = [];
 
 	const handleSearchInput = (event) => {
 		setUserFilter(event.target.value);
@@ -38,6 +39,10 @@ const CollectionPicker = ({ id }) => {
 		return <CollectionDisplay collections={filteredCollections} />
 	}
 
+	const submitCollections = () => {
+		console.log("submitted collections");
+	}
+
     return (
         <section id={id} className="collection-picker">
             <section className="collection-search">
@@ -45,10 +50,10 @@ const CollectionPicker = ({ id }) => {
 				{ getDisplay() }
             </section>
             <section className="selected-collections">
-                <CollectionDisplay collections={[]}/>
+                <CollectionDisplay collections={selectedCollections}/>
                 <div>
                     <div className="filler"></div>
-                    <button className="shuffle-button">
+                    <button className="shuffle-button main-level-button" onClick={submitCollections}>
                         Shuffle
                     </button>
                 </div>
