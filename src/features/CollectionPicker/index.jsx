@@ -6,15 +6,23 @@ import './CollectionPicker.css';
 import SearchBar from "@/features/SearchBar";
 import CollectionDisplay from "@/features/CollectionDisplay";
 
+// // for testing collections only
+const generateCollections = () => {
+	const arr = [];
+	for (let i = 0; i < 20; i++) {
+		arr.push({ name: `Collection #${i+1}`, link: `Collection #${i+1}`});
+	}
+	return arr;
+}
+
 const CollectionPicker = ({ id }) => {
 	const [userFilter, setUserFilter] = useState("");
-    const collections = [];
+	
+    const collections = generateCollections();
 	const filteredCollections = filterArray(collections, userFilter); // TODO: memoize?
-	// const filteredCollections = (userFilter) ? filterArray(collections, userFilter) : collections;
 
-	// // test collections
-	for (let i = 0; i < 20; i++) {
-		collections.push({ link: `Collection #${i+1}`});
+	const handleSearchInput = (event) => {
+		setUserFilter(event.target.value);
 	}
 
 	const getDisplay = () => {
@@ -27,13 +35,13 @@ const CollectionPicker = ({ id }) => {
 				No results
 			</p>
 		}
-		return <CollectionDisplay collections={collections} />
+		return <CollectionDisplay collections={filteredCollections} />
 	}
 
     return (
         <section id={id} className="collection-picker">
             <section className="collection-search">
-                <SearchBar placeholder="Filter collections..." />
+                <SearchBar placeholder="Filter collections..." onChange={handleSearchInput}/>
 				{ getDisplay() }
             </section>
             <section className="selected-collections">

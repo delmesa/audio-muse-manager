@@ -3,13 +3,11 @@ import Display from '@/components/Display';
 import Collection from '@/features/Collection';
 
 //TODO: useContext for current collection, then send Display filtered array
-const CollectionDisplay = ({ collections, filter }) => {
-	const filteredCollections = (filter) ? filterArray(collections, filter) : collections;
-
+const CollectionDisplay = ({ collections }) => {
 	return (
 		<Display components={
-			filteredCollections?.map((coll, index) => {
-				return <Collection key={index} link={coll.link} />;
+			collections?.map((coll, index) => {
+				return <Collection key={index} name={coll.name} link={coll.link} />;
 			})
 		} />
 	);

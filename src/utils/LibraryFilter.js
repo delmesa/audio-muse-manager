@@ -1,15 +1,24 @@
 export const parseString = (string) => {
-	// check if string starts with ##hide
-	const willExclude = false;
 	// check if string starts with ##regex
-	const willUseRegex = false;
+	let willUseRegex = false;
+	// check if string starts with ##hide
+	let willExclude = false;
+
+	// only allow one or the other; both cannot be set
+	if (string.startsWith("##regex ")) {
+		willUseRegex = true;
+		string = string.slice(8);
+	} else if (string.startsWith("##hide ")) {
+		willExclude = true;
+		string = string.slice(7);
+	}
 
 	const filter = {}
 	// filter.type = "collection"; // will be read from string
 	filter.search = string.trim();
 	// filter.comparator = ;
-	filter.exclude = willExclude;
 	filter.useRegex = willUseRegex;
+	filter.exclude = willExclude;
 
 	return filter;
 }
@@ -19,18 +28,20 @@ export const filterArray = (items, itemFilter) => {
 		console.error("Invalid argument #1: must be an array");
 		return {};
 	}
-	if (typeof itemFilter !== "string" || typeof itemFilter !== "object") {
-		console.error("Filter must be either a string or an object.");
+	if (typeof itemFilter !== "string" && typeof itemFilter !== "object") {
+		console.error("Filter must be either a string or an object; Got: " + (typeof itemFilter));
 		return {};
 	}
-	if (typeof itemFilter === "string") {
+	if (typeof itemFilter === "string") { // if the filter is passed as a string, convert to object
 		itemFilter = parseString(itemFilter);
 	}
 
 	const filteredList = items.filter(item => {
-		const comparator = itemFilter.comparator
-			? (item[itemFilter.comparator])
-			: (item.name || item.title);
+		const comparator = ( // filter-defined object of `item` to use for comparison
+			itemFilter.comparator 
+			? (item[itemFilter.comparator]) // use user-defined comparator; ...
+			: (item.name || item.title) // ...otherwise use `name` or `title` property by default
+		);
 
 		if (comparator === null) {
 			console.error(`item ${item} missing comparator (Object.name || Object.title)`);
@@ -38,17 +49,19 @@ export const filterArray = (items, itemFilter) => {
 		}
 
 		if (itemFilter.useRegex) {
-			return itemFilter.exclude ^ comparator.match(
+			return /* itemFilter.exclude ^ */ Boolean(comparator.match(
 				(itemFilter.search)
-			);
+			));
 		} else {
-			return itemFilter.exclude ^ comparator.toLocaleLowerCase().match(
+			return itemFilter.exclude ^ Boolean(comparator.toLocaleLowerCase().includes(
 				(itemFilter.search.toLocaleLowerCase())
-			);
+			));
 		}
 	})
 
 	return filteredList;
 }
+
+// TODO: Good example for testing?
 
 export default filterArray;

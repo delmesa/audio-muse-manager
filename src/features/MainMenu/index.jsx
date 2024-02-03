@@ -14,10 +14,9 @@ const MainMenu = () => {
                 <div className="header-middle-section">
                     <h1>Audio Muse & Manager</h1>
                     <section className="acknowledgements">
-                        {/* service logos go here for compliance */}
-                    </section>
+					</section>
                 </div>
-                <button id="main-login-button" data-notice="(not implemented yet&#128517;)"> {/* based on state, change to account label */}
+                <button id="main-login-button" data-notice="(not implemented yet&#128517;)">
                     Sign up
                 </button>
             </header>
