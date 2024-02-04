@@ -16,7 +16,7 @@ export const parseString = (string) => {
 	const filter = {}
 	// filter.type = "collection"; // will be read from string
 	filter.search = string.trim();
-	// filter.comparator = ;
+	filter.comparator = null;
 	filter.useRegex = willUseRegex;
 	filter.exclude = willExclude;
 
@@ -59,6 +59,29 @@ export const filterArray = (items, itemFilter) => {
 		}
 	})
 
+	return filteredList;
+}
+
+// itemFilter: [ { property: string, accepts: (itemPropertyValue) => { return Boolean } } ]
+export const filterArrayByPropertyValue = (items, itemFilter) => {
+	if (!Array.isArray(items)) {
+		console.error("Invalid argument #1: must be an array");
+		return {};
+	}
+	if (typeof itemFilter !== "object") {
+		console.error("Filter must be an object; Got: " + (typeof itemFilter));
+		return {};
+	}
+
+	const filteredList = items.filter(item => {
+		return itemFilter.every(test => {
+			// check first that item has the property, and if so, ...
+			// ...check if the property's value is accepted
+			return item[test.property] && test.accepts(item[test.property]);
+		})
+	})
+
+	console.log(filteredList);
 	return filteredList;
 }
 

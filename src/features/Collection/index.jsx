@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import Icon from '@/components/Icon';
 import './Collection.css';
 
-const Collection = ({ name, link, onActivate }) => {
+const Collection = ({ name, link, onClick }) => {
 	return (
-		<button className="collection" onClick={onActivate}>
+		<button className="collection" onClick={onClick}>
 			<Icon />
 			<div>{name}</div>
 		</button>
@@ -14,7 +14,7 @@ const Collection = ({ name, link, onActivate }) => {
 Collection.propTypes = {
 	name: PropTypes.string,
 	link: PropTypes.string,
-	onActivate: PropTypes.func 
+	onClick: PropTypes.func 
 }
 
 export default Collection;

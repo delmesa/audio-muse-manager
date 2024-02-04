@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { filterArray } from '@/utils/LibraryFilter.js';
+import { v4 as uuidv4 } from 'uuid';
 import './CollectionPicker.css';
 
 import SearchBar from "@/features/SearchBar";
@@ -10,17 +11,24 @@ import CollectionDisplay from "@/features/CollectionDisplay";
 const generateCollections = () => {
 	const arr = [];
 	for (let i = 0; i < 20; i++) {
-		arr.push({ name: `Collection #${i+1}`, link: `Collection #${i+1}`});
+		arr.push({ name: `Collection #${i+1}`, link: `Collection #${i+1}`, uuid: uuidv4()/* , selected: ((i + 1) % 3 === 0) ? true : null */});
 	}
 	return arr;
 }
+const collections = generateCollections();
 
 const CollectionPicker = ({ id }) => {
 	const [userFilter, setUserFilter] = useState("");
-	
-    const collections = generateCollections();
-	const filteredCollections = filterArray(collections, userFilter); // TODO: memoize?
-	const selectedCollections = [];
+		
+	const [unselectedCollections, selectedCollections] = collections.reduce((mainArray, coll) => {
+		const isSelected = coll.selected ? 1 : 0;
+		if (mainArray[isSelected] == null) {
+			mainArray[isSelected] = [];
+		}
+		mainArray[isSelected].push(coll);
+		return mainArray;
+	}, [])
+	const  filteredUnselectedCollections = filterArray(unselectedCollections, userFilter);
 
 	const handleSearchInput = (event) => {
 		setUserFilter(event.target.value);
@@ -31,12 +39,12 @@ const CollectionPicker = ({ id }) => {
 			return <p className="no-results">
 				You do not currently have any collections.
 			</p>
-		} else if (filteredCollections.length === 0) {
+		} else if (filteredUnselectedCollections.length === 0) {
 			return <p className="no-results">
 				No results
 			</p>
 		}
-		return <CollectionDisplay collections={filteredCollections} />
+		return <CollectionDisplay collections={filteredUnselectedCollections} />
 	}
 
 	const submitCollections = () => {
@@ -50,13 +58,13 @@ const CollectionPicker = ({ id }) => {
 				{ getDisplay() }
             </section>
             <section className="selected-collections">
-                <CollectionDisplay collections={selectedCollections}/>
                 <div>
                     <div className="filler"></div>
                     <button className="shuffle-button main-level-button" onClick={submitCollections}>
                         Shuffle
                     </button>
                 </div>
+                <CollectionDisplay collections={selectedCollections} />
             </section>
         </section>
     );

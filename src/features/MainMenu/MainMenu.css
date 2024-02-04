@@ -178,13 +178,13 @@
 
 #main-collection-picker .selected-collections {
   align-items: end;
+	gap: 10px;
 }
 
 #main-collection-picker .selected-collections .display {
-  background-color: #ddd0c7;
+  background-color: #f1e8e2;
   border: 2px solid #00000030;
   border-radius: 3px;
-  margin-bottom: 10px;
 }
 
 #main-collection-picker .selected-collections > div {
@@ -203,7 +203,7 @@
 }
 
 #main-collection-picker .selected-collections .shuffle-button {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .collection {
