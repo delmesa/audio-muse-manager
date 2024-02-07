@@ -3,7 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 const generateCollections = () => {
 	const arr = [];
 	for (let i = 0; i < 20; i++) {
-		arr.push({ name: `Collection #${i+1}`, link: `Collection #${i+1}`, uuid: uuidv4()/* , selected: ((i + 1) % 3 === 0) ? true : null */});
+		const collName = `Collection #${(i+1).toString().padStart(2, '0')}`;
+		arr.push({ name: collName, link: collName, uuid: uuidv4()});
 	}
 	return arr;
 }

@@ -182,7 +182,7 @@
 }
 
 #main-collection-picker .selected-collections .display {
-  background-color: #f1e8e2;
+  background-color: #f0e9e4; /* #f1e8e2; */
   border: 2px solid #00000030;
   border-radius: 3px;
 }
