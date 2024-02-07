@@ -3,8 +3,10 @@
         "baseUrl": "./src",
         "paths": {
             "@/components/*": ["components/*"],
+			"@/context/*": ["context/*"],
+			"@/hooks/*": ["hooks/*"],
             "@/features/*": ["features/*"],
-			"@/utils/*": ["utils/*"]
+			"@/utils/*": ["utils/*"],
         }
     },
     "include": ["src/**/*"]

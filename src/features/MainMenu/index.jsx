@@ -1,8 +1,11 @@
-
+import { getUserLibrary } from '@/api/libraryApi';
+import LibraryContext from '@/context/LibraryContext';
 import './MainMenu.css';
 
 import ExternalLinkInput from "@/features/ExternalLinkInput";
 import CollectionPicker from "@/features/CollectionPicker";
+
+const userLibrary = getUserLibrary();
 
 const MainMenu = () => {
     return (
@@ -28,7 +31,9 @@ const MainMenu = () => {
                 </article>
                 <section className="collection-interface">
                     <ExternalLinkInput id="main-link-input" onSubmit={() => {}} placeholder="Link to playlist..." />
-                    <CollectionPicker id="main-collection-picker" library={[]} />
+                    <LibraryContext.Provider value={userLibrary}>
+						<CollectionPicker id="main-collection-picker" />
+					</LibraryContext.Provider>
                 </section>
             </main>
         </section>
